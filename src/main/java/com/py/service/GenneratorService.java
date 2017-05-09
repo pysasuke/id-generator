@@ -1,5 +1,8 @@
 package com.py.service;
 
+import com.py.common.CommonEnum;
+import com.py.common.RestResult;
+import com.py.common.ServiceException;
 import com.py.constans.Constants;
 import com.py.domain.Section;
 import com.py.domain.ServiceModel;
@@ -22,13 +25,13 @@ public class GenneratorService {
     @Resource(name = "stringRedisTemplate")
     private ValueOperations<String, String> valOpsStr;
 
-    public Section getSection(String serviceId, int num) {
+    public RestResult getSection(String serviceId, int num) {
         ServiceModel serviceModel = null;
         try {
             serviceModel = ServiceModelFactory.getInstanse(serviceId);
-        } catch (RuntimeException e) {
+        } catch (ServiceException e) {
             logger.debug("未知服务");
-            throw new RuntimeException("未知服务");
+            throw new ServiceException(e.getCode(), e.getMessage());
         }
 
         String key = serviceModel.getCode();
@@ -53,6 +56,6 @@ public class GenneratorService {
         valOpsStr.set(key, prefix + String.format(format, end));
         Section section = new Section(prefix + String.format(format, start), prefix + String.format(format, end));
         logger.info("获取成功，区间为：[" + start + "," + end + "]");
-        return section;
+        return new RestResult(CommonEnum.RESPONSE_STATUS.SUCCEED.getValue(), CommonEnum.RESPONSE_STATUS.SUCCEED.name(), section);
     }
 }

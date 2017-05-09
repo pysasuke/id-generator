@@ -1,6 +1,6 @@
 package com.py.web;
 
-import com.py.domain.Section;
+import com.py.common.RestResult;
 import com.py.service.GenneratorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class StringRedisController {
     GenneratorService genneratorService;
 
     @RequestMapping("getSection")
-    public Section getSection(String serviceId, int size) {
+    public RestResult getSection(String serviceId, int size) {
         logger.debug("getSection:serviceId={},size={}", serviceId, size);
 
         return genneratorService.getSection(serviceId, size);

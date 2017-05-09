@@ -1,12 +1,14 @@
 package com.py.factory;
 
+import com.py.common.CommonEnum;
+import com.py.common.ServiceException;
 import com.py.domain.FirstServiceModel;
 import com.py.domain.SecondServiceModel;
 import com.py.domain.ServiceModel;
 
 /**
  * Created by pysasuke on 2017/5/8.
- *
+ * <p>
  * ServiceModel工厂
  */
 public class ServiceModelFactory {
@@ -26,7 +28,7 @@ public class ServiceModelFactory {
                 break;
             }
             default:
-                throw new RuntimeException("无可用对象");
+                throw new ServiceException(CommonEnum.RESPONSE_STATUS.FAILED, "未知服务");
         }
         return serviceModel;
     }
