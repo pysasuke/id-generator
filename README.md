@@ -31,7 +31,7 @@
 
 ## 核心代码
 ----
-    String value = valOpsStr.get(key);
+            String value = valOpsStr.get(key);
             if (null == value) {
                 //服务号2位 + 时间戳8位 + 不定位
                 String value2 = serviceId + TimeTools.getCodingDate() + String.format(format, 0);//用0补够6位
