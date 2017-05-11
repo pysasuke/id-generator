@@ -18,7 +18,7 @@ public class Get {
     }
 
     public static String doGet() {
-        String uriAPI = "http://localhost:8080/getfplsh?fwId=01&jqId=02&size=5000";
+        String uriAPI = "http://localhost:8080/getSection?serviceId=01&size=5000";
         String result = "";
 //      创建HttpGet或HttpPost对象，将要请求的URL通过构造方法传入HttpGet或HttpPost对象。
         HttpGet httpRequst = new HttpGet(uriAPI);

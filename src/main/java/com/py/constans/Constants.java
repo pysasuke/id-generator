@@ -6,5 +6,5 @@ package com.py.constans;
  * 常量类
  */
 public class Constants {
-    public static int GUDINGWEISHU_Service = 10;
+    public static int FIXED_DIGIT_SERVICE = 10;
 }

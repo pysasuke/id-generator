@@ -18,10 +18,10 @@ public class TimeTools {
     public static String getCodingDate() {
         String date = null;
         Calendar calendar = new GregorianCalendar();
-        String YEAR = String.valueOf(calendar.get(Calendar.YEAR));
-        String MONTH = String.format("%02d", calendar.get(Calendar.MONTH) + 1);
-        String DAY_OF_MONTH = String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH));
-        date = YEAR + MONTH + DAY_OF_MONTH;
+        String year = String.valueOf(calendar.get(Calendar.YEAR));
+        String month = String.format("%02d", calendar.get(Calendar.MONTH) + 1);
+        String day_of_month = String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH));
+        date = year + month + day_of_month;
         return date;
     }
 

@@ -11,8 +11,8 @@ public class CountdownLatchTest {
     public static void main(String[] args) {
         ExecutorService service = Executors.newCachedThreadPool(); //创建一个线程池
         final CountDownLatch cdOrder = new CountDownLatch(1);//指挥官的命令，设置为1，指挥官一下达命令，则cutDown,变为0，战士们执行任务
-        final CountDownLatch cdAnswer = new CountDownLatch(3);//因为有三个战士，所以初始值为3，每一个战士执行任务完毕则cutDown一次，当三个都执行完毕，变为0，则指挥官停止等待。
-        for (int i = 0; i < 3; i++) {
+        final CountDownLatch cdAnswer = new CountDownLatch(1000);//因为有三个战士，所以初始值为3，每一个战士执行任务完毕则cutDown一次，当三个都执行完毕，变为0，则指挥官停止等待。
+        for (int i = 0; i < 1000; i++) {
             Runnable runnable = new Runnable() {
                 public void run() {
                     try {
