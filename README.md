@@ -6,14 +6,22 @@
 
 ## 项目结构
 
-1.	common包：包含通用枚举类(包括响应枚举)CommonEnum、全局异常处理类GlobalExceptionHandler、统一返回对象类RestResult、自定义异常类ServiceException。
-2.	constans包：包含常量类Constants。
-3.	domain包：包含服务基类对象ServiceModel、子类对象FirstServiceModel和SecondServiceModel、区间对象Section(生成id的区间，同样是返回对象)。
-4.	factory包：包含工厂类ServiceModelFactory(根据不同情况生成不同的ServiceModel子类对象)。
-5.	service包：包含物业类GenneratorService(id生成具体实现)。
-6.	util包：包含时间工具类TimeTools类(日期时间戳生成)。
-7.	web包：包含请求处理类StringRedisController(请求接收)。
-8.	IdGeneratorApplication：SpringBoot启动类。
+main:源代码
+1.common包：包含通用枚举类(包括响应枚举)CommonEnum、全局异常处理类GlobalExceptionHandler、统一返回对象类RestResult、自定义异常类ServiceException。
+2.constans包：包含常量类Constants。
+3.domain包：包含服务基类对象ServiceModel、子类对象FirstServiceModel和SecondServiceModel、区间对象Section(生成id的区间，同样是返回对象)。
+4.factory包：包含工厂类ServiceModelFactory(根据不同情况生成不同的ServiceModel子类对象)。
+5.service包：包含物业类GenneratorService(id生成具体实现)。
+6.util包：包含时间工具类TimeTools类(日期时间戳生成)。
+7.web包：包含请求处理类StringRedisController(请求接收)。
+8.IdGeneratorApplication：SpringBoot启动类。
+
+resources:资源
+1.application.properties:配置文件(redis相关配置)
+2.logback.xml：配置文件(日志)
+
+test：测试
+1.test包：包含并发模拟类CountdownLatchTest和Get模拟请求类
 
 ## 技术选型
 
