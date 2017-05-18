@@ -25,20 +25,20 @@ test:
 
 ## 技术选型
 
-1、后端
+1. 后端
 
 * 核心框架：Spring boot 4.0
 * 缓存框架：Redis
 * 日志管理：logback
 
-4、平台
+2. 平台
 
 * 服务器中间件：在jdk1.8规范下开发，使用应用服务器为Tomcat 7。
 
 * 开发环境：Java、IDEA 2017、Maven 3.9、Git
 
 ## 核心代码
-----
+```java
             String value = valOpsStr.get(key);
             if (null == value) {
                 //服务号2位 + 时间戳8位 + 不定位
@@ -52,7 +52,7 @@ test:
             end = start + num - 1;
 
             valOpsStr.set(key, prefix + String.format(format, end));
-----
+```
 ## 演示地址
 
 * <http://localhost:8080/getSection?serviceId=01&size=5000>
